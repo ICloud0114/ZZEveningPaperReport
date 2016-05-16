@@ -1,0 +1,50 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...) //NSLog(...)
+#endif
+
+#import "CustomNavigation.h"    //自定义导航栏
+#import "TableViewRefresh.h"    //tableView刷新
+#import "EAHTTPRequest.h"       //网络请求
+#import "UIColor+ColorUtil.h"
+#endif
+
+#define INCREMENT (([[[UIDevice currentDevice]systemVersion]floatValue] >= 7.0)?20:20)
+
+#define NAVHEIGHT (([[[UIDevice currentDevice]systemVersion]floatValue] >= 7.0)?44:44)
+
+#define SCREENWIDTH                 ([UIScreen mainScreen].bounds.size.width)
+#define SCREENHEIGHT                ([UIScreen mainScreen].bounds.size.height)
+
+#define BGCOLOR             [UIColor colorwithHexString:@"#FFFFFF"] //背景颜色
+#define WRITETITLECOLOR     [UIColor colorwithHexString:@"#212121"] //编写页面标题颜色 、标题颜色
+#define LINKCLURCOLOR       [UIColor colorwithHexString:@"#c4001e"] //关联线索颜色
+#define SEARCHTITLECOLOR    [UIColor colorwithHexString:@"#c4c4c4"] //搜索颜色
+#define REMMINDERTEXTCLOLOR [UIColor colorwithHexString:@"#575757"] //提示文字颜色
+#define LISTTITLECOLOR      [UIColor colorwithHexString:@"#4d4543"] //列表中的标题
+#define TIMECOLOR           [UIColor colorwithHexString:@"#717171"] //列表中的日期]
+
+//搜索页面
+#define GRAY_COLOR_ZZ [UIColor grayColor]   //label 字体颜色
+
+#define TITLE_COLOR_ZZ [UIColor colorWithRed:53/255.0 green:36/255.0 blue:33/255.0 alpha:1.0]   //搜索title 颜色
+
